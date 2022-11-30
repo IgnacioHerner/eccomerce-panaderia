@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "../../constans/themes/colors";
+import { COLORS } from "../../constans/themes/colors"
 
 
 
@@ -8,12 +8,12 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.backgroundLight,
+        backgroundColor: COLORS.backgroundLight,
 
     },
     title: {
         fontFamily: 'Lato-Bold',
         fontSize: 20,
-        color: colors.text,
+        color: COLORS.text,
     },
 });
