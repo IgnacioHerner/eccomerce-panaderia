@@ -20,6 +20,7 @@ const ShopNavigator = () => {
                 },
                 headerTitleAlign: 'center',
                 presentation: 'card',
+                headerBackTitle: '',
             }}
             >
                 <Stack.Screen 
@@ -27,8 +28,21 @@ const ShopNavigator = () => {
                     component={Categories} 
                     options={{headerShown: false}}
                 />
-                <Stack.Screen name='Products' component={Products}/>
-                <Stack.Screen name='Product' component={Product}/>
+                <Stack.Screen 
+                    name='Products' 
+                    component={Products}
+                    options={( {route}) => ({
+                        title: route.params.title
+                    })}
+                />
+                <Stack.Screen 
+                    name='Product' 
+                    component={Product}
+                    options={( {route}) => ({
+                        title: route.params.title,
+                    })}
+                    
+                />
             </Stack.Navigator>
     )
 }

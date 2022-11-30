@@ -6,9 +6,9 @@ import { CATEGORIES } from '../../constans/data/index'
 import { COLORS } from "../../constans/themes/colors";
 import { styles } from "./styles";
 
-const Categories = ({ navigation}) => {
+const Categories = ({ navigation, route}) => {
     const onSelected = (item) => {
-        console.warn('onSelected', item)
+        navigation.navigate('Products', {categoryId: item.id, title: item.title, color: item.color})
     }
     const renderItem = ({item}) => <CategoryItem item={item} onSelected={onSelected}/>;
     return (
