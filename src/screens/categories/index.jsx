@@ -1,10 +1,8 @@
 import React from "react";
 import { SafeAreaView, FlatList } from "react-native";
-// import {  } from "react-native-safe-area-context";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCategory } from "../../store/actions";
 import { CategoryItem } from "../../components";
-import { COLORS } from "../../constans/themes/colors";
 import { styles } from "./styles";
 
 const Categories = ({ navigation, route}) => {

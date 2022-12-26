@@ -4,12 +4,15 @@ import ShopNavigator from './shop';
 import CartNavigator from './cart';
 import OrderNavigator from './orders'
 import { Ionicons }from '@expo/vector-icons'
+import { useSelector } from "react-redux";
 import { COLORS } from "../constans/themes/colors";
 import { isAndroid } from "../utils";
 
 const BottomTab = createBottomTabNavigator();
 
 const Tabs = () => {
+
+    const cart = useSelector((state) => state.cart.items)
     return(
         <BottomTab.Navigator 
             initialRouteName="ShopTab"
@@ -50,6 +53,13 @@ const Tabs = () => {
                             color={COLORS.primaryDark}
                         />
                     ),
+                    tabBarBadge : cart.length === 0 ? null : cart.length,
+                    tabBarBadgeStyle: {
+                        backgroundColor: COLORS.primaryDark,
+                        color: COLORS.text,
+                        fontFamily: 'Lato-Bold',
+                        fontSize: 11,
+                    },
                     tabBarLabelStyle: {
                         fontFamily: 'Lato-Regular',
                         fontSize: 12,
